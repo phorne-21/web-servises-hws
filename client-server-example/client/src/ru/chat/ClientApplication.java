@@ -8,6 +8,7 @@ public class ClientApplication {
     private static final String SERVER_HOST = "localhost";
     private static final int SERVER_PORT = 8081;
     private static final int MENU_LENGTH = 6;
+
     private static Socket socket;
     private static BufferedReader input;
     private static BufferedWriter output;
@@ -34,6 +35,7 @@ public class ClientApplication {
             throw new RuntimeException(e);
         }
     }
+
     public static void main(String[] args) {
         try {
             socket = new Socket(SERVER_HOST, SERVER_PORT);
@@ -45,13 +47,16 @@ public class ClientApplication {
                 // читаем Hello
                 System.out.println(input.readLine());
                 System.out.println(input.readLine());
+
                 // считываем с консоли ответ
                 scanner = new Scanner(System.in);
                 String message = scanner.nextLine();
+
                 // передаём ответ серверу
                 output.write(message + "\n");
                 output.flush();
                 System.out.println(input.readLine());
+
                 // получаем ответ от сервера и выводим его
                 do {
                     for (int i = 0; i < MENU_LENGTH; i++) {
@@ -63,6 +68,7 @@ public class ClientApplication {
                     output.flush();
                     showTheAnswer(message);
                 } while (!message.equals("exit"));
+
             } finally {
                 input.close();
                 output.close();

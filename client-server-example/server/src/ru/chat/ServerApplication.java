@@ -7,10 +7,10 @@ import java.net.Socket;
 public class ServerApplication {
 
     private static final int SERVER_PORT = 8081;
-
     private static final String LULLABY = "\uD83C\uDF1F Twinkle, twinkle, little star,\uD83C\uDF1F\n ⭐ How I wonder what you are.⭐\nUp above the world so high,\n ✨ Like a diamond in the sky. ✨\n\uD83C\uDF1F Twinkle, twinkle, little star, \uD83C\uDF1F\n\uD83D\uDCAB  How I wonder what you are! \uD83D\uDCAB ";
     private static final String CHRISTMAS_SONG = "❄️We wish you a merry Christmas❄\n❄️We wish you a merry Christmas❄\n❄️We wish you a merry Christmas and a happy new year!☃️\uD83C\uDF84 \uD83C\uDF85\uD83C\uDFFC";
     private static final String BUNNY = "(\\__/)\n(='.'=)\n(\")_(\")";
+
     private static Socket clientSocket;
     private static ServerSocket serverSocket;
     private static BufferedReader input;
@@ -82,11 +82,13 @@ public class ServerApplication {
                 message = input.readLine();
                 writer.write(String.format("Nice to meet you, %s!\n", message));
                 writer.flush();
+
                 do {
                     showStartMenu();
                     message = input.readLine();
                     choose(message);
                 } while (!message.equals("exit"));
+
             } finally {
                 input.close();
                 writer.close();
