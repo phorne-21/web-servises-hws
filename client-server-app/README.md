@@ -14,7 +14,7 @@ You may ask it to draw:
 
 ![draw](https://github.com/phorne-21/projects_images/raw/dev1/web-services-hws/csh3_draw.bmp)
 
-Or Lilly may sing you a lullaby if you wanna sleep:
+Or Lili may sing you a lullaby if you wanna sleep:
 
 ![sleep](https://github.com/phorne-21/projects_images/raw/dev1/web-services-hws/csh5_sleep.bmp)
 
